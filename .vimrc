@@ -4,7 +4,7 @@
 "   Author        : wander
 "   Email         : wander@email.cn
 "   File Name     : .vimrc
-"   Last Modified : 2021-06-25 15:54
+"   Last Modified : 2021-06-25 17:43
 "   Describe      : 
 "
 " ====================================================
@@ -215,9 +215,9 @@ colorscheme  one
 syntax enable 
 syntax on
 set t_Co=256
-if (has("termguicolors"))
-  set termguicolors
-endif
+" if (has("termguicolors"))
+  " set termguicolors
+" endif
 
 " markdown preview
 let g:preview_markdown_parser='mdr'
