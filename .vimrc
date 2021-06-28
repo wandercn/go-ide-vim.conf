@@ -4,7 +4,7 @@
 "   Author        : wander
 "   Email         : wander@email.cn
 "   File Name     : .vimrc
-"   Last Modified : 2021-06-25 17:43
+"   Last Modified : 2021-06-28 15:57
 "   Describe      : 
 "
 " ====================================================
@@ -167,6 +167,7 @@ let g:tagbar_position = 'rightbelow vertical'
 " PLUGINS
 call plug#begin()
 let g:vim_isort_python_version = 'python3'
+" 以下插件地址省略域名默认去github.com下载，如果不是github地址请写完成git仓库地址
 Plug 'mhinz/vim-startify' "启动欢迎页
 Plug 'nine2/vim-copyright' "自动增加作者信息
 Plug 'mhartington/oceanic-next' "配色主题
@@ -189,7 +190,6 @@ Plug 'preservim/nerdcommenter' "注释插件
 Plug 'skanehira/preview-markdown.vim' "终端显示markdown,先安装mbr
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() },'for': ['markdown', 'vim-plug']} "浏览器实时预览markdown
 
-
 " Use release branch (recommend)
 "Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
@@ -197,7 +197,16 @@ Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() },'for': [
 "Plug 'neoclide/coc.nvim', {'branch': 'master', 'do': 'yarn install --frozen-lockfile'}
 call plug#end()
 
-" set background=dark
+syntax enable 
+syntax on
+set t_Co=256
+
+" enable true color
+if (has("termguicolors"))
+    set termguicolors
+endif
+ 
+ set background=dark 
 " set background=light
 " set termguicolors
 colorscheme  one 
@@ -211,13 +220,6 @@ colorscheme  one
 " colorscheme material-monokai 
 " let g:materialmonokai_subtle_spell=1
 " let g:materialmonokai_subtle_airline=1
-
-syntax enable 
-syntax on
-set t_Co=256
-" if (has("termguicolors"))
-  " set termguicolors
-" endif
 
 " markdown preview
 let g:preview_markdown_parser='mdr'
