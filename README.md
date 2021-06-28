@@ -50,6 +50,14 @@ macOS version - x86_64
 -farsi             +mouse_sgr         +tag_binary       
 ```
 
+Plugin Manager
+
+```
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+
+```
+
 ## install
 
     git clone https://github.com/wandercn/go-ide-vim.conf.git ./vim_conf && mv ./vim_conf/.vimrc $HOME/.vimrc
