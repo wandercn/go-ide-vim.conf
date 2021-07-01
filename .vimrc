@@ -4,7 +4,7 @@
 "   Author        : wander
 "   Email         : wander@email.cn
 "   File Name     : .vimrc
-"   Last Modified : 2021-06-28 15:57
+"   Last Modified : 2021-07-01 12:31
 "   Describe      : 
 "
 " ====================================================
@@ -24,6 +24,10 @@ set showcmd "输入的命令显示出来
 set showmatch "设置匹配模式, 相当于括号匹配
 set guioptions-=T " 隐藏工具栏
 set guioptions-=m " 隐藏菜单栏
+set guioptions-=r
+set guioptions-=l
+set guioptions-=L
+set guioptions-=b 
 
 set number
 set noswapfile
@@ -31,6 +35,7 @@ set hlsearch "搜索时，高亮显示匹配结果
 set incsearch "输入搜索模式时，每输入一个字符，就自动跳到第一个匹配的结果
 set nobackup "不创建备份文件
 set noswapfile "不创建交换文件
+set nowritebackup " 表示编辑的时候不需要备份文件
 set autochdir "自动切换工作目录
 set noerrorbells "出错时，不要发出响声
 " set foldmethod =indent "基于缩进进行代码折叠
@@ -66,7 +71,7 @@ set softtabstop=4   " Sets the number of columns for a TAB
 
 set expandtab       " Expand TABs to spaces
 
-
+set guifont=Hack:h13
 " VIM-GO CONFIGS
 " 设置快捷键
 " 模式下
@@ -189,13 +194,15 @@ Plug 'jiangmiao/auto-pairs' "括号自动完成
 Plug 'preservim/nerdcommenter' "注释插件
 Plug 'skanehira/preview-markdown.vim' "终端显示markdown,先安装mbr
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() },'for': ['markdown', 'vim-plug']} "浏览器实时预览markdown
+Plug 'darthmall/vim-vue' "vue.js高亮显示文件
 
 " Use release branch (recommend)
-"Plug 'neoclide/coc.nvim', {'branch': 'release'}
+" Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 " Or build from source code by using yarn: https://yarnpkg.com
-"Plug 'neoclide/coc.nvim', {'branch': 'master', 'do': 'yarn install --frozen-lockfile'}
+" Plug 'neoclide/coc.nvim', {'branch': 'master', 'do': 'yarn install --frozen-lockfile'}
 call plug#end()
+let g:vue_pre_processors = 'detect_on_enter'
 
 syntax enable 
 syntax on
