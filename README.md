@@ -65,4 +65,6 @@ curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
     vim +PlugInstall
 
 
-   
+## screen   
+
+![](go-vim.gif)
