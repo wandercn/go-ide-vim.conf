@@ -1,6 +1,16 @@
 # go-ide-vim.conf
 my vim conf for golang IDE
 
+## supported languages
+
+- [x] Golang
+- [x] Rust
+- [x] C
+- [x] Python
+- [x] Java 
+- [x] JavaScript
+- [x] TypeScript
+
 ## requirements
 
  vim 8.0 +python3 +lua
@@ -64,7 +74,25 @@ curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
 
     vim +PlugInstall
 
+## install YouCompleteMe
+```
+cd ~/.vim/plugged/YouCompleteMe/
+./install.py --all
+```
+## screen
 
-## screen   
-
+### Go
 ![](go-vim.gif)
+
+### Rust 
+![](rust.png)
+
+### C
+![](clang.png)
+
+### Python 
+![](python.png)
+### Java 
+![](python.png)
+### JavaScript and TypeScript 
+![](ts.png)
