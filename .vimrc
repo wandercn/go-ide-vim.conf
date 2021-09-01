@@ -4,7 +4,7 @@
 "   Author        : wander
 "   Email         : wander@email.cn
 "   File Name     : .vimrc
-"   Last Modified : 2021-07-01 12:31
+"   Last Modified : 2021-09-02 01:42
 "   Describe      : 
 "
 " ====================================================
@@ -86,6 +86,36 @@ autocmd FileType go nmap <Leader>r :GoRun<CR>
 autocmd FileType go nmap <Leader>m :lprevious<CR>
 autocmd FileType go nmap <Leader>n :lnext<CR>
 autocmd FileType go nmap <Leader>a :lclose<CR>
+
+" VIM-Rust 模式配置
+autocmd FileType rust nmap gr :YcmCompleter GoToReferences<CR>
+autocmd FileType rust nmap gd :YcmCompleter GoToDefinition<CR>
+autocmd FileType rust nmap gi :YcmCompleter GoToImplementation<CR>
+autocmd FileType rust nmap rn :YcmCompleter RefactorRename[!]<CR>
+" cargo test 快捷键 空格 + t
+autocmd FileType rust nmap <Leader>t :Ctest<CR>
+" cargo build 快捷键 空格 + b
+autocmd FileType rust nmap <Leader>b :Cbuild<CR>
+" cargo run 快捷键 空格 + r
+autocmd FileType rust nmap <Leader>r :Crun<CR>
+" cargo clean 快捷键 空格 + c 
+autocmd FileType rust nmap <Leader>c :Cclean<CR>
+" cargo doc 快捷键 空格 + d 
+autocmd FileType rust nmap <Leader>d :Cdoc<CR>
+" cargo init 快捷键 空格 + i 
+autocmd FileType rust nmap <Leader>i :Cinit<CR>
+" cargo update 快捷键 空格 + u 
+autocmd FileType rust nmap <Leader>i :Cupdate<CR>
+" cargo publish 快捷键 空格 + p 
+autocmd FileType rust nmap <Leader>p :Cpublish<CR>
+" cargo search 快捷键 空格 + s 
+autocmd FileType rust nmap <Leader>s :Csearch<CR>
+" 其他支持的编程语言
+autocmd FileType c,cpp,objc,objcpp,cuda,java,javascript,python,typescript nmap gr :YcmCompleter GoToReferences<CR>
+autocmd FileType c,cpp,objc,objcpp,cuda,java,javascript,python,typescript nmap gd :YcmCompleter GoToDefinition<CR>
+autocmd FileType cs,java,typescript,javascript nmap gi :YcmCompleter GoToImplementation<CR>
+autocmd FileType c,cpp,objc,objcpp,cuda,java,javascript,python,typescript,cs nmap rn :YcmCompleter RefactorRename <newName>
+
 nmap tg :TagbarToggle<CR>
 nmap <C-m> :cprevious<CR>
 nmap <C-n> :cnext<CR>
@@ -168,6 +198,32 @@ let g:airline_symbols.branch = '⎇'
 " let g:airline#extensions#tabline#left_alt_sep = '>'
 " TarBar
 let g:tagbar_position = 'rightbelow vertical'
+" rust 配置 
+let g:ycm_rust_toolchain_root = '/Users/apple/.rustup/toolchains/stable-x86_64-apple-darwin'
+let g:ycm_rust_src_path = '/Users/apple/.rustup/toolchains/stable-x86_64-apple-darwin/lib/rustlib/src/rust/src'
+let g:rustfmt_autosave =1 
+let g:rust_clip_command = 'pbcopy'
+let g:tagbar_type_rust = {
+    \ 'kinds' : [
+        \ 'T:types',
+        \ 'f:functions',
+        \ 'g:enumerations',
+        \ 's:structures',
+        \ 'm:modules',
+        \ 'c:constants',
+        \ 't:traits',
+        \ 'i:trait implementations',
+    \ ],
+\ }
+" let g:ycm_language_server = 
+	" \ [ 
+	" \   {
+	" \     'name': 'rust',
+	" \     'cmdline': [ 'rust_analyzer' ],
+	" \     'filetypes': [ 'rust' ],
+	" \     'project_root_files': [ 'Cargo.toml' ]
+	" \   }
+	" \ ]
 
 " PLUGINS
 call plug#begin()
@@ -181,6 +237,7 @@ Plug 'skielbasa/vim-material-monokai' "配色主题
 Plug 'fatih/molokai' "配色主题
 Plug 'lifepillar/vim-solarized8' "配色主题
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' } "golang 插件
+Plug 'rust-lang/rust.vim' "rust插件
 Plug 'preservim/tagbar' "代码结构浏览
 Plug 'ctrlpvim/ctrlp.vim' "文件查找插件
 Plug 'preservim/nerdtree' "文件系统浏览器
@@ -237,5 +294,28 @@ let g:ycm_autoclose_preview_window_after_insertion = 1
 let g:ycm_autoclose_preview_window_after_completion = 1
 " 设置作者信息
 let g:file_copyright_name = "wander"
-let g:file_copyright_email = "wander@email.cn"
+let g:file_copyright_email = "wander@ffactory.org"
 let g:file_copyright_auto_update = 1
+
+function! s:CustomizeYcmLocationWindow()
+  " Move the window to the top of the screen.
+  silent! wincmd P 
+  " Set the window height to 5.
+  5wincmd _
+  " Switch back to working window.
+   " wincmd p
+endfunction
+
+autocmd User YcmLocationOpened call s:CustomizeYcmLocationWindow()
+
+function! s:CustomizeYcmQuickFixWindow()
+  " Move the window to the top of the screen.
+  silent! wincmd P 
+  " Set the window height to 5.
+  5wincmd _
+
+   " wincmd p
+endfunction
+
+autocmd User YcmQuickFixOpened call s:CustomizeYcmQuickFixWindow()
+
