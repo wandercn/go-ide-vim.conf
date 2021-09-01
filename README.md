@@ -1,5 +1,5 @@
 # go-ide-vim.conf
-my vim conf for golang IDE
+my vim conf for golang IDE and rust IDE
 
 ## supported languages
 
