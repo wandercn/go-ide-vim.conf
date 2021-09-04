@@ -4,7 +4,7 @@
 "   Author        : wander
 "   Email         : wander@email.cn
 "   File Name     : .vimrc
-"   Last Modified : 2021-09-02 01:42
+"   Last Modified : 2021-09-04 15:59
 "   Describe      : 
 "
 " ====================================================
@@ -91,7 +91,7 @@ autocmd FileType go nmap <Leader>a :lclose<CR>
 autocmd FileType rust nmap gr :YcmCompleter GoToReferences<CR>
 autocmd FileType rust nmap gd :YcmCompleter GoToDefinition<CR>
 autocmd FileType rust nmap gi :YcmCompleter GoToImplementation<CR>
-autocmd FileType rust nmap rn :YcmCompleter RefactorRename[!]<CR>
+autocmd FileType rust nmap rn :YcmCompleter RefactorRename <newName>
 " cargo test 快捷键 空格 + t
 autocmd FileType rust nmap <Leader>t :Ctest<CR>
 " cargo build 快捷键 空格 + b
