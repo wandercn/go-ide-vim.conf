@@ -2,9 +2,9 @@
 "   Copyright (C) 2021  All rights reserved.
 "
 "   Author        : wander
-"   Email         : wander@email.cn
+"   Email         : wander@ffactory.org
 "   File Name     : .vimrc
-"   Last Modified : 2021-09-04 15:59
+"   Last Modified : 2021-10-13 10:33
 "   Describe      : 
 "
 " ====================================================
@@ -71,7 +71,10 @@ set softtabstop=4   " Sets the number of columns for a TAB
 
 set expandtab       " Expand TABs to spaces
 
-set guifont=Hack:h13
+" set guifont=Hack:h15
+" set guifont=Hack:h18
+set guifont=Go_Mono:h18 " 这里的:h18中的18就是字体的大小值可以自己修改。
+" set guifont=JetBarains_Mono:h18
 " VIM-GO CONFIGS
 " 设置快捷键
 " 模式下
@@ -203,18 +206,86 @@ let g:ycm_rust_toolchain_root = '/Users/apple/.rustup/toolchains/stable-x86_64-a
 let g:ycm_rust_src_path = '/Users/apple/.rustup/toolchains/stable-x86_64-apple-darwin/lib/rustlib/src/rust/src'
 let g:rustfmt_autosave =1 
 let g:rust_clip_command = 'pbcopy'
-let g:tagbar_type_rust = {
-    \ 'kinds' : [
-        \ 'T:types',
-        \ 'f:functions',
-        \ 'g:enumerations',
-        \ 's:structures',
-        \ 'm:modules',
-        \ 'c:constants',
-        \ 't:traits',
-        \ 'i:trait implementations',
-    \ ],
+
+" go tagbar配置
+" 依赖 https://github.com/jstemmer/gotags 必须要安装
+let g:tagbar_type_go = {
+	\ 'ctagstype' : 'go',
+	\ 'kinds'     : [
+		\ 'p:package',
+		\ 'i:imports:1',
+		\ 'c:constants',
+		\ 'v:variables',
+		\ 't:types',
+		\ 'n:interfaces',
+		\ 'w:fields',
+		\ 'e:embedded',
+		\ 'm:methods',
+		\ 'r:constructor',
+		\ 'f:functions'
+	\ ],
+	\ 'sro' : '.',
+	\ 'kind2scope' : {
+		\ 't' : 'ctype',
+		\ 'n' : 'ntype'
+	\ },
+	\ 'scope2kind' : {
+		\ 'ctype' : 't',
+		\ 'ntype' : 'n'
+	\ },
+	\ 'ctagsbin'  : 'gotags',
+	\ 'ctagsargs' : '-sort -silent'
 \ }
+
+" rust TagBar配置
+" 依赖 https://github.com/universal-ctags/ctags必须要安装
+let g:rust_use_custom_ctags_defs = 1  " if using rust.vim
+let g:tagbar_type_rust = {
+  \ 'ctagsbin' : '/usr/local/bin/ctags',
+  \ 'ctagstype' : 'rust',
+  \ 'kinds' : [
+      \ 'n:modules',
+      \ 's:structures:1',
+      \ 'i:interfaces',
+      \ 'c:implementations',
+      \ 'f:functions:1',
+      \ 'g:enumerations:1',
+      \ 't:type aliases:1:0',
+      \ 'v:constants:1:0',
+      \ 'M:macros:1',
+      \ 'm:fields:1:0',
+      \ 'e:enum variants:1:0',
+      \ 'P:methods:1',
+  \ ],
+  \ 'sro': '::',
+  \ 'kind2scope' : {
+      \ 'n': 'module',
+      \ 's': 'struct',
+      \ 'i': 'interface',
+      \ 'c': 'implementation',
+      \ 'f': 'function',
+      \ 'g': 'enum',
+      \ 't': 'typedef',
+      \ 'v': 'variable',
+      \ 'M': 'macro',
+      \ 'm': 'field',
+      \ 'e': 'enumerator',
+      \ 'P': 'method',
+  \ },
+\ }
+
+" let g:tagbar_type_rust = {
+    " \ 'kinds' : [
+    "     \ 'T:types',
+    "     \ 'f:functions',
+    "     \ 'g:enumerations',
+    "     \ 's:structures',
+    "     \ 'm:modules',
+    "     \ 'c:constants',
+    "     \ 't:traits',
+    "     \ 'i:trait implementations',
+    " \ ],
+" \ }
 " let g:ycm_language_server = 
 	" \ [ 
 	" \   {
