@@ -96,6 +96,82 @@ cd ~/.vim/plugged/YouCompleteMe/
 | :noh | 关闭搜索匹配的文字高亮效果.| Turn off the text highlighting effect for search matches|any|
 | :MarkdownPreview  | 打开MarkDown文档实时预览,会在浏览器打开页面。|Open MarkDown documents for live preview|MarkDown|
 | [Shift] + p + m | 打开vim内部MarkDown预览窗口|Open the vim internal MarkDown preview window|MarkDown|
+| [F9]           |设置调试断点 |set breakpoint |Rust,Go|
+| [F5]            | 启动图形化调试 |start graphical debugger |Rust,Go|
+
+## Debug Code
+
+图形化Debug代码
+
+### 怎么debug rust ？
+
+#### 插件准备
+
+在Vim中用命令 `:VimspectorInstall CodeLLDB` 安装必要插件,[Vimspector官方说明](https://github.com/puremourning/vimspector#rust)
+
+1. 新建配置文件
+
+需要在每个项目目录下创建独立的`.vimspector.json`。
+
+Rust项目配置内容参考如下，`gostdmain` 项目名称需要根据实际修改。
+```
+{
+  "configurations": {
+    "launch": {
+      "adapter": "CodeLLDB",
+      "configuration": {
+        "request": "launch",
+        "program": "${workspaceRoot}/target/debug/gostdmain"
+      }
+    }
+  }
+}
+```
+
+2. 设置断点
+
+在代码需要调试行，按键盘功能键F9设置断点显示为红点，如下图:
+![](debug_breakpoint.png)
+
+3. 启动调试
+
+按键盘功能键F5, 启动图形化调试界面，如下图:
+
+其他步骤点击界面显示的按钮就可以了，比敲命令调试方便高效多了。
+![](rust-debug.png)
+
+###  怎么debug go ？
+
+#### 插件准备
+在Vim中用命令 `:VimspectorInstall vscode-go` 安装必要插件,[Vimspector官方说明](https://github.com/puremourning/vimspector#go)
+
+Delve installed, e.g. go get -u github.com/go-delve/delve/cmd/dlv
+
+1. 新建配置文件
+
+Go虽然用dlv命令调试也算比较方便的，但是图形化调试还是更高效点。
+
+其他步骤与debug rust一样。
+
+区别就一点，debug配置文件内容不一样。在go项目目录下创建`.vimspector.json`。
+
+Go项目配置内容参考如下, `dlvToolPath`对应的值就是你dlv工具的安装位置。
+```
+{
+  "configurations": {
+    "run": {
+      "adapter": "vscode-go",
+      "configuration": {
+        "request": "launch",
+        "program": "${fileDirname}",
+        "mode": "debug",
+        "dlvToolPath": "$HOME/go/bin/dlv"
+      }
+    }
+  }
+}
+
+```
 
 ## screen
 
@@ -122,3 +198,5 @@ cd ~/.vim/plugged/YouCompleteMe/
 
 ### TagBar for Rust
 ![](tagbar-rust.png)
+
+
