@@ -2,9 +2,9 @@
 "   Copyright (C) 2021  All rights reserved.
 "
 "   Author        : wander
-"   Email         : wander@ffactory.org
+"   Email         : wander@email.cn
 "   File Name     : .vimrc
-"   Last Modified : 2021-10-13 10:33
+"   Last Modified : 2021-10-13 19:31
 "   Describe      : 
 "
 " ====================================================
@@ -73,7 +73,8 @@ set expandtab       " Expand TABs to spaces
 
 " set guifont=Hack:h15
 " set guifont=Hack:h18
-set guifont=Go_Mono:h18 " 这里的:h18中的18就是字体的大小值可以自己修改。
+set guifont=Go_Mono:h15
+" set guifont=Go_Mono:h18
 " set guifont=JetBarains_Mono:h18
 " VIM-GO CONFIGS
 " 设置快捷键
@@ -323,6 +324,7 @@ Plug 'preservim/nerdcommenter' "注释插件
 Plug 'skanehira/preview-markdown.vim' "终端显示markdown,先安装mbr
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() },'for': ['markdown', 'vim-plug']} "浏览器实时预览markdown
 Plug 'darthmall/vim-vue' "vue.js高亮显示文件
+Plug 'puremourning/vimspector' "代码图形Debugger
 
 " Use release branch (recommend)
 " Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -330,6 +332,9 @@ Plug 'darthmall/vim-vue' "vue.js高亮显示文件
 " Or build from source code by using yarn: https://yarnpkg.com
 " Plug 'neoclide/coc.nvim', {'branch': 'master', 'do': 'yarn install --frozen-lockfile'}
 call plug#end()
+
+let g:vimspector_enable_mappings = 'HUMAN' "vimspector
+
 let g:vue_pre_processors = 'detect_on_enter'
 
 syntax enable 
