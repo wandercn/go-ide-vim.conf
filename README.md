@@ -95,7 +95,7 @@ cd ~/.vim/plugged/YouCompleteMe/
 | [Control] + p | 打开快速文件搜索.|Open a quick file search|any|
 | :noh | 关闭搜索匹配的文字高亮效果.| Turn off the text highlighting effect for search matches|any|
 | :MarkdownPreview  | 打开MarkDown文档实时预览,会在浏览器打开页面。|Open MarkDown documents for live preview|MarkDown|
-| [Shift] + p + m | 打开vim内部MarkDown预览窗口|Open the vim internal MarkDown preview window|MarDown|
+| [Shift] + p + m | 打开vim内部MarkDown预览窗口|Open the vim internal MarkDown preview window|MarkDown|
 
 ## screen
 
