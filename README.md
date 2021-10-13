@@ -79,6 +79,24 @@ curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
 cd ~/.vim/plugged/YouCompleteMe/
 ./install.py --all
 ```
+## Shortcut key description
+| 快捷键 | 功能说明 |en-us description  |对应编程语言 |
+| :-----| :---- | :---- | :---- |
+| gr    | 查看引用列表|GoToReferences|any|
+| gd    | 查看定义|GoToDefinition|any|
+| gi    | 查看接口类型实现|GoToImplementation| any|
+| rn    | 标识符重命名|RefactorRename | any |
+| [Space] + b  | 编译代码| Build Code | Rust,Go |
+| [Space] + r  | 运行代码| Run Code | Rust,Go |
+| [Space] + t  | 运行测试| Run Test Code|Rust,Go|
+| tg         | 打开/关闭TagBar查看器| open/close TagBar Viewer|any|
+| [Control] + z | 打开/关闭NeoTree浏览器| open/close NeoTree|any|
+| [Control] + o | 回退光标到上一次所在文件位置| Rewind the cursor to the last file location|any|
+| [Control] + p | 打开快速文件搜索.|Open a quick file search|any|
+| :noh | 关闭搜索匹配的文字高亮效果.| Turn off the text highlighting effect for search matches|any|
+| :MarkdownPreview  | 打开MarkDown文档实时预览,会在浏览器打开页面。|Open MarkDown documents for live preview|MarkDown|
+| [Shift] + p + m | 打开vim内部MarkDown预览窗口|Open the vim internal MarkDown preview window|MarDown|
+
 ## screen
 
 ### Go
@@ -96,3 +114,11 @@ cd ~/.vim/plugged/YouCompleteMe/
 ![](python.png)
 ### JavaScript and TypeScript 
 ![](ts.png)
+
+## tagbar
+
+### TagBar for Go
+![](tagbar-go.png)
+
+### TagBar for Rust
+![](tagbar-rust.png)
