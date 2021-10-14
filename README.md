@@ -98,6 +98,9 @@ cd ~/.vim/plugged/YouCompleteMe/
 | [Shift] + p + m | 打开vim内部MarkDown预览窗口|Open the vim internal MarkDown preview window|MarkDown|
 | [F9]           |设置调试断点 |set breakpoint |Rust,Go|
 | [F5]            | 启动图形化调试 |start graphical debugger |Rust,Go|
+| [Space] + c + c           |注释单行代码 |Comment one line of code|any|
+| [Space] + c + m           |注释多行代码 |Comment multiline code|any|
+| [Space] + c + u           |取消注释代码 |Uncomment code|any|
 
 ## Debug Code
 
