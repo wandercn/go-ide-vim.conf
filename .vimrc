@@ -4,7 +4,7 @@
 "   Author        : wander
 "   Email         : wander@ffactory.org
 "   File Name     : .vimrc
-"   Last Modified : 2021-10-20 16:05
+"   Last Modified : 2021-10-20 22:30
 "   Describe      : 
 "
 " ====================================================
@@ -341,6 +341,9 @@ call plug#end()
 let g:vimspector_enable_mappings = 'HUMAN' "vimspector
 
 let g:vue_pre_processors = 'detect_on_enter'
+" auto-pairs 括号自动补全设置,以下两项设置，关闭右大括号跳转，在空行插入}时没插入跳转到下一个已经存在的大括号}的问题
+let g:AutoPairsMultilineClose = 0  
+let g:AutoPairsFlyMode = 0 
 
 syntax enable 
 syntax on
