@@ -83,6 +83,8 @@ cd ~/.vim/plugged/YouCompleteMe/
 | 快捷键 | 功能说明 |en-us description  |对应编程语言 |
 | :-----| :---- | :---- | :---- |
 | gr    | 查看引用列表|GoToReferences|any|
+| [Control] + n    |浏览引用列表，查看下一个|view references list, next one|any|
+| [Control] + m    |浏览引用列表，查看上一个|view references list, previou one|any|
 | gd    | 查看定义|GoToDefinition|any|
 | gi    | 查看接口类型实现|GoToImplementation| any|
 | rn    | 标识符重命名|RefactorRename | any |
