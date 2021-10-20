@@ -4,7 +4,7 @@
 "   Author        : wander
 "   Email         : wander@email.cn
 "   File Name     : .vimrc
-"   Last Modified : 2021-10-13 19:31
+"   Last Modified : 2021-10-20 11:08
 "   Describe      : 
 "
 " ====================================================
@@ -38,8 +38,8 @@ set noswapfile "不创建交换文件
 set nowritebackup " 表示编辑的时候不需要备份文件
 set autochdir "自动切换工作目录
 set noerrorbells "出错时，不要发出响声
-" set foldmethod =indent "基于缩进进行代码折叠
-set foldmethod =syntax "基于语法进行代码折叠
+set foldmethod =indent "基于缩进进行代码折叠
+" set foldmethod =syntax "基于语法进行代码折叠
 set nofoldenable "启动vim默认关闭代码折叠
 "-------分隔窗口将新窗口再右边或者下方打开，添加配置-----
 set splitbelow
