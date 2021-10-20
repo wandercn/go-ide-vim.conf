@@ -2,9 +2,9 @@
 "   Copyright (C) 2021  All rights reserved.
 "
 "   Author        : wander
-"   Email         : wander@email.cn
+"   Email         : wander@ffactory.org
 "   File Name     : .vimrc
-"   Last Modified : 2021-10-20 11:08
+"   Last Modified : 2021-10-20 16:05
 "   Describe      : 
 "
 " ====================================================
@@ -39,7 +39,7 @@ set nowritebackup " 表示编辑的时候不需要备份文件
 set autochdir "自动切换工作目录
 set noerrorbells "出错时，不要发出响声
 set foldmethod =indent "基于缩进进行代码折叠
-" set foldmethod =syntax "基于语法进行代码折叠
+" set foldmethod =syntax "基于语法进行代码折叠, 与rustfmt一起开启保存文件会很慢先关了
 set nofoldenable "启动vim默认关闭代码折叠
 "-------分隔窗口将新窗口再右边或者下方打开，添加配置-----
 set splitbelow
@@ -73,8 +73,8 @@ set expandtab       " Expand TABs to spaces
 
 " set guifont=Hack:h15
 " set guifont=Hack:h18
-set guifont=Go_Mono:h15
-" set guifont=Go_Mono:h18
+" set guifont=Go_Mono:h15
+set guifont=Go_Mono:h18
 " set guifont=JetBarains_Mono:h18
 " VIM-GO CONFIGS
 " 设置快捷键
@@ -87,15 +87,20 @@ autocmd FileType go nmap rn :GoRename<CR>
 autocmd FileType go nmap <Leader>t :GoTest<CR>
 autocmd FileType go nmap <Leader>b :GoBuild<CR>
 autocmd FileType go nmap <Leader>r :GoRun<CR>
-autocmd FileType go nmap <Leader>m :lprevious<CR>
-autocmd FileType go nmap <Leader>n :lnext<CR>
-autocmd FileType go nmap <Leader>a :lclose<CR>
+" LocationList 浏览快捷键设置
+autocmd FileType go nmap <C-m> :lprevious<CR>
+autocmd FileType go nmap <C-n> :lnext<CR>
+autocmd FileType go nmap ca :lclose<CR>
 
 " VIM-Rust 模式配置
 autocmd FileType rust nmap gr :YcmCompleter GoToReferences<CR>
 autocmd FileType rust nmap gd :YcmCompleter GoToDefinition<CR>
 autocmd FileType rust nmap gi :YcmCompleter GoToImplementation<CR>
 autocmd FileType rust nmap rn :YcmCompleter RefactorRename <newName>
+" LocationList 浏览快捷键设置
+autocmd FileType rust nmap <C-m> :cprevious<CR>
+autocmd FileType rust nmap <C-n> :cnext<CR>
+autocmd FileType rust nmap ca :cclose<CR>
 " cargo test 快捷键 空格 + t
 autocmd FileType rust nmap <Leader>t :Ctest<CR>
 " cargo build 快捷键 空格 + b
@@ -119,11 +124,11 @@ autocmd FileType c,cpp,objc,objcpp,cuda,java,javascript,python,typescript nmap g
 autocmd FileType c,cpp,objc,objcpp,cuda,java,javascript,python,typescript nmap gd :YcmCompleter GoToDefinition<CR>
 autocmd FileType cs,java,typescript,javascript nmap gi :YcmCompleter GoToImplementation<CR>
 autocmd FileType c,cpp,objc,objcpp,cuda,java,javascript,python,typescript,cs nmap rn :YcmCompleter RefactorRename <newName>
+autocmd FileType c,cpp,objc,objcpp,cuda,java,javascript,python,typescript,cs nmap <C-m> :cprevious<CR>
+autocmd FileType c,cpp,objc,objcpp,cuda,java,javascript,python,typescript,cs nmap <C-n> :cnext<CR>
+autocmd FileType c,cpp,objc,objcpp,cuda,java,javascript,python,typescript,cs nmap ca :cclose<CR>
 
 nmap tg :TagbarToggle<CR>
-nmap <C-m> :cprevious<CR>
-nmap <C-n> :cnext<CR>
-nmap ca :cclose<CR>
 nmap PM :PreviewMarkdown right<CR>
 
 " Syntax highlighting
@@ -163,7 +168,7 @@ let g:go_rename_command = 'gopls'
 let NERDTreeIgnore=['^[.][[dir]]', 'vendor$[[dir]]', '\.DS_Store$[[file]]'] "文件浏览器忽略目录和文件
 let NERDTreeShowLineNumbers=1 "显示行号
 let NERDTreeWinPos='left' "文件浏览器显示位置 left or right
-"let g:go_list_type = "quickfix"
+" let g:go_list_type = "quickfix"
 let NERDTreeShowHidden=1
 let NERDSpaceDelims=1 " 让注释符与语句之间留一个空格
 let NERDCompactSexyComs=1 " 多行注释时样子更好看
@@ -205,7 +210,7 @@ let g:tagbar_position = 'rightbelow vertical'
 " rust 配置 
 let g:ycm_rust_toolchain_root = '/Users/apple/.rustup/toolchains/stable-x86_64-apple-darwin'
 let g:ycm_rust_src_path = '/Users/apple/.rustup/toolchains/stable-x86_64-apple-darwin/lib/rustlib/src/rust/src'
-let g:rustfmt_autosave =1 
+let g:rustfmt_autosave = 1 
 let g:rust_clip_command = 'pbcopy'
 
 " go tagbar配置
