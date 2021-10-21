@@ -104,6 +104,10 @@ cd ~/.vim/plugged/YouCompleteMe/
 | [Space] + c + m           |注释多行代码 |Comment multiline code|any|
 | [Space] + c + u           |取消注释代码 |Uncomment code|any|
 
+## FAQ
+
+1. let g:rustfmt_autosave =1 开启保存很慢超过3秒钟,怎么处理？
+> set foldmethod =syntax "基于语法进行代码折叠 ,这个设置引起的。改成 set foldmethod = indent 或者manual就能解决问题。
 ## Debug Code
 
 图形化Debug代码
