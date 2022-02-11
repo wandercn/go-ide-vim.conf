@@ -54,7 +54,7 @@ highlight clear SpellBad
 " CUSOR SETUP
 let &t_SI = "\<Esc>]50;CursorShape=1\x7"
 let &t_SR = "\<Esc>]50;CursorShape=5\x7"
-let &t_EI = "\<Esc>]50;CursorShape=6\x7"
+" let &t_EI = "\<Esc>]50;CursorShape=6\x7"
 
 " TAB SETUPS
 set tabstop=4       " The width of a TAB is set to 4.
