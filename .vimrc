@@ -208,8 +208,8 @@ let g:airline_symbols.branch = '⎇'
 " TarBar
 let g:tagbar_position = 'rightbelow vertical'
 " rust 配置 
-let g:ycm_rust_toolchain_root = '/Users/apple/.rustup/toolchains/stable-x86_64-apple-darwin'
-let g:ycm_rust_src_path = '/Users/apple/.rustup/toolchains/stable-x86_64-apple-darwin/lib/rustlib/src/rust/src'
+" let g:ycm_rust_toolchain_root = '/Users/apple/.rustup/toolchains/stable-x86_64-apple-darwin'
+" let g:ycm_rust_src_path = '/Users/apple/.rustup/toolchains/stable-x86_64-apple-darwin/lib/rustlib/src/rust/src'
 let g:rustfmt_autosave = 1 
 let g:rust_clip_command = 'pbcopy'
 
