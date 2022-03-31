@@ -330,6 +330,7 @@ Plug 'skanehira/preview-markdown.vim' "终端显示markdown,先安装mbr
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() },'for': ['markdown', 'vim-plug']} "浏览器实时预览markdown
 Plug 'darthmall/vim-vue' "vue.js高亮显示文件
 Plug 'puremourning/vimspector' "代码图形Debugger
+Plug 'mhinz/vim-grepper' "根据文件内容查找文件
 
 " Use release branch (recommend)
 " Plug 'neoclide/coc.nvim', {'branch': 'release'}
