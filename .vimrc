@@ -8,7 +8,14 @@
 "   Describe      : 
 "
 " ====================================================
-
+"                          _                   _           
+"                         | |                 (_)          
+" __      ____ _ _ __   __| | ___ _ __  __   ___ _ __ ___  
+" \ \ /\ / / _` | '_ \ / _` |/ _ \ '__| \ \ / / | '_ ` _ \ 
+"  \ V  V / (_| | | | | (_| |  __/ |     \ V /| | | | | | |
+"   \_/\_/ \__,_|_| |_|\__,_|\___|_|      \_/ |_|_| |_| |_|
+                                                         
+                                                      
 filetype plugin indent on
 "启用终端透明
 " hi Normal guibg=NONE ctermbg=NONE
@@ -17,7 +24,8 @@ filetype plugin indent on
 " hi EndOfBuffer guibg=NONE ctermbg=NONE
 
 set autowrite
-set mouse=a
+" set mouse=a
+set mouse=h "mac下 set mouse=a不起作用，改成h
 set encoding=utf-8     "编码
 set fenc=utf-8         "编码
 set showcmd "输入的命令显示出来
@@ -44,7 +52,7 @@ set nofoldenable "启动vim默认关闭代码折叠
 "-------分隔窗口将新窗口再右边或者下方打开，添加配置-----
 set splitbelow
 set splitright
-
+set backspace=indent,eol,start "解决退格键无法删除字符"   
 " 让配置变更立即生效
  " autocmd BufWritePost $MYVIMRC source $MYVIMRC
 
