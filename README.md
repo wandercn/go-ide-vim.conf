@@ -78,7 +78,9 @@ curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
 ```
 cd ~/.vim/plugged/YouCompleteMe/
 ./install.py --all
+
 ```
+YouCompleteMe 如果编译安装不成功，不想折腾的，可以考虑用coc.nvim做代码补全。快捷键基本一样，vimrc配置在 [rust-ide-with-coc](https://github.com/wandercn/rust-ide-with-coc)
 ## Shortcut key description
 | 快捷键 | 功能说明 |en-us description  |对应编程语言 |
 | :-----| :---- | :---- | :---- |
