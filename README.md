@@ -87,6 +87,7 @@ YouCompleteMe 如果编译安装不成功，不想折腾的，可以考虑用coc
 | gr    | 查看引用列表|GoToReferences|any|
 | [Control] + n    |浏览引用列表，查看下一个|view references list, next one|any|
 | [Control] + m    |浏览引用列表，查看上一个|view references list, previou one|any|
+| ca    |关闭引用列表|close references list, previou one|any|
 | gd    | 查看定义|GoToDefinition|any|
 | gi    | 查看接口类型实现|GoToImplementation| any|
 | rn    | 标识符重命名|RefactorRename | any |
