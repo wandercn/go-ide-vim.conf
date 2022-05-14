@@ -85,8 +85,13 @@ set expandtab       " Expand TABs to spaces
 set guifont=Go_Mono:h18
 " set guifont=JetBarains_Mono:h18
 " VIM-GO CONFIGS
+" Visual模式, 复制内容到系统剪贴板
+" 剪切 Ctrl + x
+vmap <C-x> :!pbcopy<CR>
+" 复制 Ctrl + c
+vmap <C-c> :w !pbcopy<CR><CR>
+
 " 设置快捷键
-" 模式下
 let mapleader="\<space>"
 autocmd FileType go nmap gr :GoReferrers<CR>
 autocmd FileType go nmap gd :GoDef<CR>
