@@ -372,8 +372,8 @@ endif
  set background=dark 
 " set background=light
 " set termguicolors
-colorscheme  one 
-" colorscheme  OceanicNext 
+“ colorscheme  one 
+colorscheme  OceanicNext 
 " let g:oceanic_next_terminal_bold = 1
 " let g:oceanic_next_terminal_italic = 1 "斜体注释会有影响
 " colorscheme  solarized8 
@@ -383,7 +383,10 @@ colorscheme  one
 " colorscheme material-monokai 
 " let g:materialmonokai_subtle_spell=1
 " let g:materialmonokai_subtle_airline=1
-
+" 自动补全窗口的配色,Pmenu 是所有项的配色，PmenuSel 是选中项的配色，guibg 和 guifg 分别对应背景色和前景色(需要在colorscheme 主题设置之后不然会被主题覆盖。)
+hi PMenu  guifg=#c0c0c0 guibg=#262626
+" hi PMenu  guifg=#c0c0c0 guibg=#3c3645
+hi PMenuSel guifg=#ffffff guibg=#005f90
 " markdown preview
 let g:preview_markdown_parser='mdr'
 " let g:preview_markdown_parser='glow'
