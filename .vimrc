@@ -231,6 +231,9 @@ let g:ycm_semantic_triggers =  {
                         \ 'c,cpp,objc,objcpp,cuda,java,javascript,python,typescript,cs': ['re!\w{2}'],
                         \ 'go,rust': ['re!\w{2}'],
                         \ }
+" 关闭ycm原型预览窗口
+set completeopt=menu,menuone
+let g:ycm_add_preview_to_completeopt = 0
 			
 " go tagbar配置
 " 依赖 https://github.com/jstemmer/gotags 必须要安装
