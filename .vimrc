@@ -221,7 +221,7 @@ let g:tagbar_position = 'rightbelow vertical'
 let g:rustfmt_autosave = 1 
 let g:rust_clip_command = 'pbcopy'
 
-" 文本输入启用语补全配置
+" 文本输入启用语义补全配置
 let g:ycm_semantic_triggers =  {
                         \ 'c,cpp,objc,objcpp,cuda,java,javascript,python,typescript,cs': ['re!\w{2}'],
                         \ 'go,rust': ['re!\w{2}'],
