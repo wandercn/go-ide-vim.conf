@@ -380,7 +380,7 @@ endif
  set background=dark 
 " set background=light
 " set termguicolors
-“ colorscheme  one 
+" colorscheme  one 
 colorscheme  OceanicNext 
 " let g:oceanic_next_terminal_bold = 1
 " let g:oceanic_next_terminal_italic = 1 "斜体注释会有影响
