@@ -82,7 +82,11 @@ set expandtab       " Expand TABs to spaces
 " set guifont=Hack:h15
 " set guifont=Hack:h18
 " set guifont=Go_Mono:h15
-set guifont=Go_Mono:h18
+" 兼容debian 12 gvim
+" 下载 Go Mono 字体文件，在https://www.fonts.net.cn/font-32197616724.html
+" 安装字体 sudo cp /path/to/go-mono-fonts.ttf /usr/share/fonts/
+set guifont=Go\ Mono\ 13
+" set guifont=Go_Mono:h18
 " set guifont=JetBarains_Mono:h18
 " VIM-GO CONFIGS
 " Visual模式, 复制内容到系统剪贴板
